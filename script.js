@@ -1,14 +1,20 @@
 $(function(){
 	let menu_bool = true;
 
+  let open_timer = 180;
+
 	$('.lines').click(function(){
 		if (menu_bool == true) {
-			$('.top-bar__nav_m').css('display', 'block');
-			$('.svg_1').css('top', '229px');
+			$('.top-bar__nav_m').animate({'height': '116px'}, open_timer);
+      $('.top-bar__nav_m').css('visibility', 'visible');
+			$('.svg_1').animate({'top': '210px'}, open_timer);
+      $(this).css('background-image', 'url("icon/cross.png")');
 			menu_bool = false;
 		} else {
-			$('.top-bar__nav_m').css('display', 'none');
-			$('.svg_1').css('top', '80px');
+			$('.top-bar__nav_m').animate({"height": "0"}, open_timer);
+      $('.top-bar__nav_m').css('visibility', 'collapse');
+			$('.svg_1').animate({'top': '94px'}, open_timer);
+      $(this).css('background-image', 'url("icon/lines.png")');
 			menu_bool = true;
 		}
 	});
@@ -16,7 +22,8 @@ $(function(){
   let scroll_bool = true;
 
   $('body').on('click', '.order-call', function(){
-    $('.call-back-parent').css('display', 'flex');
+    $('.call-back').css('display', 'flex');
+    $('.modal-overlay').css('display', 'block');
     if (scroll_bool == true) {
       $('html, body').css('overflow','hidden'); //запрет скролла
       scroll_bool = false;
@@ -24,16 +31,17 @@ $(function(){
   });
 
    $('body').on('click', '.more-info__button', function(){
-    $('.more-info-parent').css('display', 'flex');
+    $('.more-info').css('display', 'flex');
+    $('.modal-overlay').css('display', 'block');
     if (scroll_bool == true) {
       $('html, body').css('overflow','hidden'); //запрет скролла
       scroll_bool = false;
     }
   });
 
-  $('body').on('click', '.callx', function(){
-    $('.call-back-parent').css('display', 'none');
-    $('.more-info-parent').css('display', 'none');
+  $('body').on('click', '.close-string img', function(){
+    $('.modal').css('display', 'none');
+    $('.modal-overlay').css('display', 'none');
     if (scroll_bool == false) {
       $('html, body').css('overflow','visible');
       scroll_bool = true;
@@ -41,7 +49,7 @@ $(function(){
   });
 
   $('body').on('click', '.button_4', function(){
-    $('.call-back-parent').css('display', 'none');
+    $('.call-back').css('display', 'none');
     if (scroll_bool == false) {
       $('html, body').css('overflow','visible');
       scroll_bool = true;
@@ -108,28 +116,11 @@ $(function(){
         'transform': 'rotate(20deg)'
       });
    	};
-
-   	// setTimeout(showTags, 0);
     showTags();
 
    	window.onscroll = function() {scrollFunction()};
 
 	function scrollFunction() { 
-  		// if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
-    // 		$('.i-do').css({
-   	// 		'opacity': '1',
-   	// 		'visibility': 'visible'});
-  		// }
-  		// else if (document.body.scrollTop < 1 || document.documentElement.scrollTop < 1) {
-    // 		$('.i_do').css({
-   	// 		'opacity': '0',
-   	// 		'visibility': 'hidden'});
-  		// }
-      // if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
-      //   $('.cover').css({
-      //   'opacity': '0',
-      //   'visibility': 'hidden'});
-      // }
   		if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
     		$('.pb').css({
    			'opacity': '1',
