@@ -5,9 +5,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=320, initial-scale=1">
 	<!-- fonts preload -->
-	<link rel="preload" href="fonts/roboto-v20-cyrillic_latin-regular.woff2" as="font" />
-	<link rel="preload" href="fonts/roboto-v20-cyrillic_latin-700.woff2" as="font" />
-	<link rel="preload" href="fonts/roboto-v20-cyrillic_latin-900.woff2" as="font" />
+	<link rel="preload" href="fonts/roboto-v20-cyrillic_latin-regular.woff2" as="font" crossorigin="anonymous">
+	<link rel="preload" href="fonts/roboto-v20-cyrillic_latin-700.woff2" as="font" crossorigin="anonymous">
+	<link rel="preload" href="fonts/roboto-v20-cyrillic_latin-900.woff2" as="font" crossorigin="anonymous">
 	<!-- css -->
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<!-- slick -->
@@ -124,7 +124,7 @@
 		</section>
 		<section class="gradient" id="price">
 			<div class="gradient__text flex">
-				<span class="gradient__text-1">Адаптивная верстка под все устройства и браузеры от 1000 рублей всего за 4 часа*</span>
+				<h3>Адаптивная верстка под все устройства и браузеры от 1000 рублей всего за 4 часа*</h3>
 				<span class="gradient__text-2">* Срок и стоимость могут отличаться от заявленных</span>
 			</div>
 		</section>
@@ -175,7 +175,7 @@
 						<div class="flex"><label for="tel-input">Телефон *</label></div>
 						<input type="text" id="tel-input">
 					</div>
-					<button class="button_4">Отправить</button>
+					<input type="submit" name="send" value="Отправить" class="button_4">
 			</form>	
 		</div>
 	</div>
